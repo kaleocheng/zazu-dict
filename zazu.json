@@ -1,0 +1,25 @@
+{
+  "name": "zazu-dict",
+  "version": "1.0.0",
+  "description": "Zazu plugin that adds Dict integration.",
+  "blocks": {
+    "input": [
+      {
+        "id": "dict",
+        "type": "PrefixScript",
+        "prefix": "dc",
+        "space": true,
+        "args": "optional",
+        "script": "src/dict.js",
+        "connections": ["QueryDict"]
+      }
+    ],
+    "output": [
+      {
+        "id": "QueryDict",
+        "type": "OpenInBrowser",
+        "url": "dict://{value}"
+      }
+    ]
+  }
+}
